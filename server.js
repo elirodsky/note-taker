@@ -1,5 +1,5 @@
 const express = require('express');
-//const api = require('./routes/api');
+const api = require('./api/api');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
-//app.use('/api', api);
+app.use('/api', api);
 
 //HTML Routes:
 const path = require('path');
